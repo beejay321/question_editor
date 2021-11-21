@@ -5,7 +5,7 @@ const OneColumn = ({ col, i, rowIndex }) => {
   return (
     <>
       {col.type === "image" ? (
-        <td className="tableRow ">
+        <td className=" ">
           <div className="d-grid justify-content-start gap-2 ">
             <ImageModal />
             <span className="d-flex justify-content-start">
