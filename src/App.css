@@ -51,7 +51,7 @@
   width: 40px;
   height: 40px;
   overflow: hidden;
-  /* border-radius: 50%; */
+  
 }
 .rowImage {
   width: auto;
@@ -61,25 +61,35 @@
   background-color: #d6d6d6;
 }
 .table {
-  /* background-color: #ebebeb; */
-  /* padding: 10px; */
-  /* border-collapse: separate; */
+  border-collapse: collapse;
   vertical-align: middle !important;
 }
-/* .tableCell {
+.tableCell {
   border: solid 3px;
   border-color: #ebebeb;
-  
 }
 .tableRow {
-  border: solid 3px;
+  border: none !important;
   border-color: #ebebeb;
-  
-} */
+}
 .rowText {
   font-size: 16px;
   font-weight: bold;
-  /* font-family: "Cavello"; */
-  /* color: #914244; */
-  /* padding: 48px 48px 48px 48px; */
+  
+}
+.summaryText {
+  font-size: 16px;
+  font-weight: bold;
+  
+}
+.vertical {
+  margin-top: 60px;
+  border-left: 4px solid rgb(75, 75, 75);
+  height: 500px;  
+}
+
+@media only screen and (max-width: 992px) {
+  .vertical {
+    display: none;
+  }
 }
