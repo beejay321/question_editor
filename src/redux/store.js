@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import lengthReducer from "./reducers/rows";
+import lengthReducer from "./reducers/rowsReducer";
 
 export const initialState = {
     lengthOfRows: 0,
