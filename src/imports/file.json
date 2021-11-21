@@ -1,0 +1,54 @@
+[
+    [
+        {
+            "id": 1,
+            "type": "image",
+            "name": "",
+            "value": ""
+        },
+        {
+            "id": 2,
+            "type": "image",
+            "name": "",
+            "value": ""
+        },
+        {
+            "id": 3,
+            "type": "image",
+            "name": "",
+            "value": ""
+        },
+        {
+            "id": 4,
+            "type": "image",
+            "name": "",
+            "value": ""
+        }
+    ],
+    [
+        {
+            "id": 5,
+            "type": "radio",
+            "name": "1",
+            "value": ""
+        },
+        {
+            "id": 7,
+            "type": "radio",
+            "name": "1",
+            "value": ""
+        },
+        {
+            "id": 8,
+            "type": "radio",
+            "name": "1",
+            "value": ""
+        },
+        {
+            "id": 9,
+            "type": "radio",
+            "name": "1",
+            "value": ""
+        }
+    ]
+]
