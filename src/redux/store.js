@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import { createStore } from "redux";
 import lengthReducer from "./reducers/rows";
 
 export const initialState = {
