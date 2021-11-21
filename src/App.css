@@ -57,3 +57,29 @@
   width: auto;
   height: 100%;
 }
+.tableHeading {
+  background-color: #d6d6d6;
+}
+.table {
+  /* background-color: #ebebeb; */
+  /* padding: 10px; */
+  /* border-collapse: separate; */
+  vertical-align: middle !important;
+}
+/* .tableCell {
+  border: solid 3px;
+  border-color: #ebebeb;
+  
+}
+.tableRow {
+  border: solid 3px;
+  border-color: #ebebeb;
+  
+} */
+.rowText {
+  font-size: 16px;
+  font-weight: bold;
+  /* font-family: "Cavello"; */
+  /* color: #914244; */
+  /* padding: 48px 48px 48px 48px; */
+}

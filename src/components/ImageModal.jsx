@@ -1,13 +1,17 @@
 import React, { useState, useRef } from "react";
 import { Modal, Button, Image, Spinner, Form } from "react-bootstrap";
+import { BsPlusLg } from "react-icons/bs";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import image from "../assets/images/plus.svg";
 
 const ImageModal = ({ index }) => {
   const [show, setShow] = useState(false);
-
-  const [rowImage, setRowImage] = useState("http://placehold.it/40");
+  const [rowImage, setRowImage] = useState(image);
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedRow, setSelectedRow] = useState("");
   const [imageLoading, setImageLoading] = useState(false);
+
+  // BsPlusLg
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

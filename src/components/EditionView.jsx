@@ -4,6 +4,8 @@ import Arr from "../imports/file.json";
 import OneRow from "./OneRow";
 import { getNoOfRows } from "../redux/action";
 import { connect, useSelector, useDispatch } from "react-redux";
+import plus from "../assets/images/plus-lg-green.svg";
+import dash from "../assets/images/dash-lg.svg";
 
 const EditionView = () => {
   //this is the schema for each object
@@ -50,15 +52,15 @@ const EditionView = () => {
       <Container className=" ">
         <Row>
           <Col className="">
-            <div className="py-3">
+            <div className="p-3 mb-3 tableHeading">
               <h5 contentEditable="true">
                 <em>Title Of Question</em>
               </h5>
             </div>
-            <div className="d-flex ">
+            <div className="d-flex table ">
               <div>
-                <Table>
-                  <tbody>
+                <Table >
+                  <tbody className="table">
                     {oneRow.map((row, index) => (
                       <>
                         <OneRow row={row} index={index} key={index} />
@@ -66,23 +68,23 @@ const EditionView = () => {
                     ))}
                   </tbody>
                 </Table>
-                <div className="d-flex px-2 gap-2">
-                  <span>
-                    <Button onClick={addRow}>+</Button>
-                  </span>
-                  <span>
-                    <Button onClick={removeRow}>-</Button>
-                  </span>
+
+                <div>
+                  <div className="rowImageDiv px-2 ">
+                    <img className="rowImage " onClick={addRow} src={plus} alt="rowImage" />
+                  </div>
+                  <div className="rowImageDiv px-2 ">
+                    <img className="rowImage " onClick={removeRow} src={dash} alt="rowImage" />
+                  </div>
                 </div>
               </div>
               <div className="d-flex pt-2  gap-2">
-                <span>
-                  <Button onClick={addCol}>+</Button>
-                </span>
-
-                <span>
-                  <Button onClick={removeCol}>-</Button>
-                </span>
+                <div className="rowImageDiv px-2 ">
+                  <img className="rowImage " onClick={addCol} src={plus} alt="rowImage" />
+                </div>
+                <div className="rowImageDiv px-2 ">
+                  <img className="rowImage " onClick={removeCol} src={dash} alt="rowImage" />
+                </div>
               </div>
             </div>
           </Col>

@@ -25,7 +25,7 @@ const OneRow = ({ index, row }) => {
   return (
     <>
       {index === 0 ? (
-        <tr key={index}>
+        <tr key={index} className="tableRow " >
           <div></div>
           {row.map((col, i) => (
             <>
@@ -34,10 +34,10 @@ const OneRow = ({ index, row }) => {
           ))}
         </tr>
       ) : (
-        <tr key={index}>
+        <tr key={index} className="tableRow ">
           <div className="d-flex justify-content-start gap-2 ">
             <ImageModal index={index} />
-            <span contenteditable="true">
+            <span contenteditable="true" className="rowText" >
               <em>{rowLabel}</em>
             </span>
           </div>
