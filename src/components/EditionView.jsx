@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Container, Row, Col, Table, Button } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container, Row, Col, Table } from "react-bootstrap";
 import Arr from "../imports/file.json";
 import OneRow from "./OneRow";
 import { getNoOfRows } from "../redux/action";
-import { connect, useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import plus from "../assets/images/plus-lg-green.svg";
 import dash from "../assets/images/dash-lg.svg";
 
@@ -69,8 +69,8 @@ const EditionView = () => {
                   </tbody>
                 </Table>
 
-                <div>
-                  <div className="rowImageDiv px-2 ">
+                <div className=" px-2 ">
+                  <div className="rowImageDiv  ">
                     <img className="rowImage " onClick={addRow} src={plus} alt="rowImage" />
                   </div>
                   <div className="rowImageDiv px-2 ">
@@ -78,7 +78,7 @@ const EditionView = () => {
                   </div>
                 </div>
               </div>
-              <div className="d-flex pt-2  gap-2">
+              <div className="d-flex pt-3  gap-2">
                 <div className="rowImageDiv px-2 ">
                   <img className="rowImage " onClick={addCol} src={plus} alt="rowImage" />
                 </div>
