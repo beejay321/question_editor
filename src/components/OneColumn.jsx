@@ -6,7 +6,7 @@ const OneColumn = ({ col, i, rowIndex }) => {
   return (
     <>
       {col.type === "image" ? (
-        <td>
+        <th>
           <div className="d-grid justify-content-start gap-2 ">
             {/* <img className="d-flex justify-content-start" src="http://placehold.it/40" alt="Dummy Image" /> */}
             <ImageModal />
@@ -16,7 +16,7 @@ const OneColumn = ({ col, i, rowIndex }) => {
               </span>
             </span>
           </div>
-        </td>
+        </th>
       ) : (
         <td>
           <input type={col.type} id={col.id} name={rowIndex} defaultValue={col.value} />
