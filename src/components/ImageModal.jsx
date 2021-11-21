@@ -13,6 +13,7 @@ const ImageModal = ({ index }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // const ADDRESS = "http://localhost:3255/rows";
   const ADDRESS = "https://question-editorr.herokuapp.com/rows";
 
   const addRowImage = async (e, index) => {
