@@ -5,12 +5,12 @@ const lengthReducer = (state = { initialState }, action) => {
     case "GET_NO_COLS":
       return {
         ...state,
-        lengthOfCols: action.payload, // THIS IS VALID
+        lengthOfCols: action.payload, 
       };
     case "GET_NO_ROWS":
       return {
         ...state,
-        lengthOfRows: action.payload, // THIS IS VALID
+        lengthOfRows: action.payload, 
       };
 
     default:
