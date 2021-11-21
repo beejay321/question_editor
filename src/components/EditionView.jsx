@@ -29,42 +29,59 @@ const EditionView = () => {
   const addRow = () => {
     setOneRow([...oneRow, oneRow[oneRow.length - 1]]);
   };
+  const removeRow = () => {
+    if (oneRow.length > 2) {
+      setOneRow(oneRow.slice(0, -1));
+    }
+  };
 
   const addCol = () => {
     setOneRow([...oneRow.map((row, i) => [...row, row[row.length - 1]])]);
   };
 
+  const removeCol = () => {
+    let result = [...oneRow.map((row, i) => row.slice(0, -1))];
+
+    setOneRow(result);
+  };
+
   return (
-    <>      
+    <>
       <Container className=" ">
         <Row>
           <Col className="">
-            <div className="pt-4">
-              <h5 contenteditable="true">
+            <div className="py-3">
+              <h5 contentEditable="true">
                 <em>Title Of Question</em>
               </h5>
             </div>
             <div className="d-flex ">
-              <Table>
-                <tbody>
-                  {oneRow.map((row, index) => (
-                    <>
-                      <OneRow row={row} index={index} key={index} />
-                    </>
-                  ))}
-
-                  <tr>
-                    <td>
-                      <Button onClick={addRow}>+</Button>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
               <div>
+                <Table>
+                  <tbody>
+                    {oneRow.map((row, index) => (
+                      <>
+                        <OneRow row={row} index={index} key={index} />
+                      </>
+                    ))}
+                  </tbody>
+                </Table>
+                <div className="d-flex px-2 gap-2">
+                  <span>
+                    <Button onClick={addRow}>+</Button>
+                  </span>
+                  <span>
+                    <Button onClick={removeRow}>-</Button>
+                  </span>
+                </div>
+              </div>
+              <div className="d-flex pt-2  gap-2">
                 <span>
-                  <td>
-                    <Button onClick={addCol}>+</Button>
-                  </td>{" "}
+                  <Button onClick={addCol}>+</Button>
+                </span>
+
+                <span>
+                  <Button onClick={removeCol}>-</Button>
                 </span>
               </div>
             </div>
