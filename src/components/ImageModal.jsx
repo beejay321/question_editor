@@ -1,6 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Modal, Button, Image, Spinner, Form } from "react-bootstrap";
-import { BsPlusLg } from "react-icons/bs";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import image from "../assets/images/plus.svg";
 
@@ -8,16 +7,13 @@ const ImageModal = ({ index }) => {
   const [show, setShow] = useState(false);
   const [rowImage, setRowImage] = useState(image);
   const [selectedImage, setSelectedImage] = useState("");
-  const [selectedRow, setSelectedRow] = useState("");
   const [imageLoading, setImageLoading] = useState(false);
 
-  // BsPlusLg
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const ADDRESS = "http://localhost:3255/rows";
-  // const ADDRESS = "https://question-editorr.herokuapp.com/rows";
+  const ADDRESS = "https://question-editorr.herokuapp.com/rows";
 
   const addRowImage = async (e, index) => {
     e.preventDefault();
