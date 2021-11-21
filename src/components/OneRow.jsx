@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Table, Form, Button } from "react-bootstrap";
 import ImageModal from "./ImageModal";
 import OneColumn from "./OneColumn";
 import {  useDispatch } from "react-redux";
@@ -34,7 +33,7 @@ const OneRow = ({ index, row }) => {
           ))}
         </tr>
       ) : (
-        <tr key={index} className="tableRow ">
+        <tr key={index} className="tableRow py-3">
           <div className="d-flex justify-content-start gap-2 ">
             <ImageModal index={index} />
             <span contenteditable="true" className="rowText" >
