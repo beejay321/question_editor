@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+#selectimages {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#post-file {
+  width: 0;
+}
+.rowImageDiv {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  /* border-radius: 50%; */
+}
+.rowImage {
+  width: auto;
+  height: 100%;
+}
