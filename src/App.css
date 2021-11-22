@@ -51,7 +51,6 @@
   width: 40px;
   height: 40px;
   overflow: hidden;
-  
 }
 .rowImage {
   width: auto;
@@ -59,6 +58,9 @@
 }
 .tableHeading {
   background-color: #d6d6d6;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
 }
 .table {
   border-collapse: collapse;
@@ -75,17 +77,16 @@
 .rowText {
   font-size: 16px;
   font-weight: bold;
-  
+  font-style: italic;
 }
 .summaryText {
   font-size: 16px;
   font-weight: bold;
-  
 }
 .vertical {
   margin-top: 60px;
   border-left: 4px solid rgb(75, 75, 75);
-  height: 500px;  
+  height: 500px;
 }
 
 @media only screen and (max-width: 992px) {
