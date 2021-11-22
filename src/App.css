@@ -45,7 +45,7 @@
 #post-file {
   width: 0;
 }
-.rowImageDiv {
+.colImageDiv {
   display: inline-block;
   position: relative;
   width: 40px;
@@ -55,6 +55,25 @@
 .rowImage {
   width: auto;
   height: 100%;
+  background-color: rgb(240, 240, 240);
+
+}
+.addImage {
+  width: auto;
+  height: 100%;
+
+}
+.rowImageDiv {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+}
+.colImage {
+  width: auto;
+  height: 100%;
+  background-color: rgb(240, 240, 240);
 }
 .tableHeading {
   background-color: #d6d6d6;
