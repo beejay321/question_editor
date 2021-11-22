@@ -10,7 +10,7 @@ const OneColumn = ({ col, i, rowIndex }) => {
       {col.type === "image" ? (
         <td className=" ">
           <div className="d-grid justify-content-start gap-2 ">
-            <ImageModal />
+            <ImageModal imageClass="colImage" imageDivClass ="colImageDiv" />
             <ContentEditable
               className="rowText"
               tagName="p"
