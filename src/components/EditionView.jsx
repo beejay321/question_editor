@@ -3,15 +3,15 @@ import { Container, Row, Col, Table } from "react-bootstrap";
 import Arr from "../imports/file.json";
 import OneRow from "./OneRow";
 import { getNoOfRows } from "../redux/action";
-import {  useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import plus from "../assets/images/plus-lg-green.svg";
 import dash from "../assets/images/dash-lg.svg";
+import ContentEditable from "react-contenteditable";
 
 const EditionView = () => {
   //this is the schema for each object
   const obj = {
     id: 0,
-    title: "hi",
     type: "radio",
     name: "",
     value: "",
@@ -22,10 +22,30 @@ const EditionView = () => {
 
   const [oneRow, setOneRow] = useState(Arr); //this is an array containing all rowArrays
   const [rowCount, setRowCount] = useState("");
+  const [questionTitle, setQuestionTitle] = useState(`Title Of Question`);
   const dispatch = useDispatch();
+
+  const ADDRESS = "https://question-editorr.herokuapp.com";
+
+  const getQuestion = async () => {    
+    try {
+      const response = await fetch(`${ADDRESS}/questions`);
+      console.log(response);
+      if (response.ok) {
+        const data = await response.json();
+        // setOneRow(data[0].rows);
+        console.log("Successful");
+      } else {
+        console.log("Something went wrong");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     dispatch(getNoOfRows(oneRow));
+    getQuestion();
   }, [oneRow]);
 
   const addRow = () => {
@@ -43,7 +63,6 @@ const EditionView = () => {
 
   const removeCol = () => {
     let result = [...oneRow.map((row, i) => row.slice(0, -1))];
-
     setOneRow(result);
   };
 
@@ -51,15 +70,23 @@ const EditionView = () => {
     <>
       <Container className=" ">
         <Row>
+          <div className="p-3 mb-3 tableHeading">
+            <ContentEditable
+              className="tableHeading"
+              tagName="h5"
+              html={questionTitle}
+              onChange={(e) => {
+                const html = e.target.value;
+                setQuestionTitle(html);
+              }}
+            />
+          </div>
+        </Row>
+        <Row>
           <Col className="">
-            <div className="p-3 mb-3 tableHeading">
-              <h5 contentEditable="true">
-                <em>Title Of Question</em>
-              </h5>
-            </div>
             <div className="d-flex table ">
               <div>
-                <Table >
+                <Table>
                   <tbody className="table">
                     {oneRow.map((row, index) => (
                       <>
