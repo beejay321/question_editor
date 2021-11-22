@@ -3,7 +3,7 @@ import { Modal, Button, Image, Spinner, Form } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import image from "../assets/images/plus.svg";
 
-const ImageModal = (props) => {
+const ImageModal = ({imageClass, imageDivClass}) => {
   const [show, setShow] = useState(false);
   const [rowImage, setRowImage] = useState(image);
   const [selectedImage, setSelectedImage] = useState("");
@@ -48,8 +48,8 @@ const ImageModal = (props) => {
   };
   return (
     <>
-      <div className="rowImageDiv ">
-        <img className="rowImage " onClick={handleShow} src={rowImage} alt="rowImage" />
+      <div className={imageDivClass}>
+        <img className={imageClass} onClick={handleShow} src={rowImage} alt="rowImage" />
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
