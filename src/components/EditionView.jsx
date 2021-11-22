@@ -27,7 +27,7 @@ const EditionView = () => {
 
   const ADDRESS = "https://question-editorr.herokuapp.com";
 
-  const getQuestion = async () => {    
+  const getQuestion = async () => {
     try {
       const response = await fetch(`${ADDRESS}/questions`);
       console.log(response);
@@ -98,19 +98,19 @@ const EditionView = () => {
 
                 <div className=" px-2 ">
                   <div className="rowImageDiv  ">
-                    <img className="rowImage " onClick={addRow} src={plus} alt="rowImage" />
+                    <img className="addImage " onClick={addRow} src={plus} alt="rowImage" />
                   </div>
                   <div className="rowImageDiv px-2 ">
-                    <img className="rowImage " onClick={removeRow} src={dash} alt="rowImage" />
+                    <img className="addImage " onClick={removeRow} src={dash} alt="rowImage" />
                   </div>
                 </div>
               </div>
-              <div className="d-flex pt-3  gap-2">
+              <div className="d-flex pt-2  ">
                 <div className="rowImageDiv px-2 ">
-                  <img className="rowImage " onClick={addCol} src={plus} alt="rowImage" />
+                  <img className="addImage " onClick={addCol} src={plus} alt="rowImage" />
                 </div>
-                <div className="rowImageDiv px-2 ">
-                  <img className="rowImage " onClick={removeCol} src={dash} alt="rowImage" />
+                <div className="rowImageDiv  ">
+                  <img className="addImage " onClick={removeCol} src={dash} alt="rowImage" />
                 </div>
               </div>
             </div>
