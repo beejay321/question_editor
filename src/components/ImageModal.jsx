@@ -3,7 +3,7 @@ import { Modal, Button, Image, Spinner, Form } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import image from "../assets/images/plus.svg";
 
-const ImageModal = ({ index }) => {
+const ImageModal = (props) => {
   const [show, setShow] = useState(false);
   const [rowImage, setRowImage] = useState(image);
   const [selectedImage, setSelectedImage] = useState("");
@@ -13,15 +13,14 @@ const ImageModal = ({ index }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const ADDRESS = "http://localhost:3255/rows";
-  const ADDRESS = "https://question-editorr.herokuapp.com/rows";
+  const ADDRESS = "https://question-editorr.herokuapp.com";
 
   const addRowImage = async (e, index) => {
     e.preventDefault();
     setImageLoading(true);
     try {
       const id = index + 1;
-      const response = await fetch(`${ADDRESS}/619a8411ebb70416125daf8a/uploadImage`, {
+      const response = await fetch(`${ADDRESS}/images/uploadImage`, {
         method: "POST",
         body: selectedImage,
       });
@@ -29,7 +28,7 @@ const ImageModal = ({ index }) => {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        setRowImage(data.images);
+        setRowImage(data.image);
         console.log("Sucessfully posted");
         setImageLoading(false);
       } else {
