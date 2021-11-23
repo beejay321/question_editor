@@ -2,34 +2,35 @@ import React, { useState, useEffect } from "react";
 import ImageModal from "./ImageModal";
 import OneColumn from "./OneColumn";
 import { useDispatch } from "react-redux";
-import { getNoOfColumns } from "../redux/action";
+import { getNoOfColumns, getLongestColLabel } from "../redux/action";
 import ContentEditable from "react-contenteditable";
 
-const OneRow = ({ index, row }) => {
+const OneRow = ({ index, row, createArr }) => {
   const dispatch = useDispatch();
-  const [editableText, setEditableText] = useState(`row ${index}`);
+  const [rowLabel, setRowLabel] = useState(`Row${index}`);
+  const [longestColLabel, setLongestColLabel] = useState([""]);
 
   useEffect(() => {
     dispatch(getNoOfColumns(row));
-  }, [row, dispatch]);
+    dispatch(getLongestColLabel(longestColLabel));
+    createArr(rowLabel);
+  }, [row, dispatch, rowLabel, longestColLabel]);
 
-  // useEffect(() => {
-  //   const rowLabelLength = () => {
-  //     console.log("rowLabelLength");
-  //     console.log(row.length);
-  //     setColCount(row.length);
-  //   };
-  //   rowLabelLength();
-  // }, [row]);
+  const arrOfColLabels = (label) => {
+    console.log("");
+    let colLabel = [label.length > longestColLabel[0].length ? label : longestColLabel[0]];
+    console.log(colLabel);
+    setLongestColLabel(colLabel);
+  };
 
   return (
     <>
       {index === 0 ? (
         <tr key={index} className="tableRow ">
-          <div></div>
+          <div className="d-flex justify-content-start gap-2  "></div>
           {row.map((col, i) => (
             <>
-              <OneColumn col={col} i={i} rowIndex={index} key={`${index}${i}`} />
+              <OneColumn col={col} i={i} rowIndex={index} key={`${index}${i}`} arrOfColLabels={arrOfColLabels} />
             </>
           ))}
         </tr>
@@ -38,18 +39,18 @@ const OneRow = ({ index, row }) => {
           <div className="d-flex justify-content-start gap-2  ">
             <ImageModal index={index} imageClass="rowImage" imageDivClass="rowImageDiv" />
             <ContentEditable
-              className="rowLabel d-flex"
+              className="rowLabel d-flex "
               tagName="p"
-              html={editableText}
+              html={rowLabel}
               onChange={(e) => {
-                const html = e.target.value;
-                setEditableText(html);
+                setRowLabel(e.target.value);
               }}
             />
           </div>
+
           {row.map((col, i) => (
             <>
-              <OneColumn col={col} i={i} rowIndex={index} />
+              <OneColumn col={col} i={i} rowIndex={index} arrOfColLabels={arrOfColLabels} key={`${index}${i}`} />
             </>
           ))}
         </tr>
