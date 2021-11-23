@@ -19,7 +19,6 @@ const ImageModal = ({imageClass, imageDivClass}) => {
     e.preventDefault();
     setImageLoading(true);
     try {
-      const id = index + 1;
       const response = await fetch(`${ADDRESS}/images/uploadImage`, {
         method: "POST",
         body: selectedImage,
