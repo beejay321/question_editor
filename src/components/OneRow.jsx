@@ -39,7 +39,7 @@ const OneRow = ({ index, row, createArr }) => {
           <div className="d-flex justify-content-start gap-2  ">
             <ImageModal index={index} imageClass="rowImage" imageDivClass="rowImageDiv" />
             <ContentEditable
-              className="rowLabel d-flex "
+              className="rowLabel d-flex pt-3 align-items-center"
               tagName="p"
               html={rowLabel}
               onChange={(e) => {
