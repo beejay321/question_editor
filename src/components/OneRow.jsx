@@ -35,10 +35,10 @@ const OneRow = ({ index, row }) => {
         </tr>
       ) : (
         <tr key={index} className="tableRow py-3">
-          <div className="d-flex justify-content-start gap-2 ">
+          <div className="d-flex justify-content-start gap-2  ">
             <ImageModal index={index} imageClass="rowImage" imageDivClass="rowImageDiv" />
             <ContentEditable
-              className="rowText"
+              className="rowLabel d-flex"
               tagName="p"
               html={editableText}
               onChange={(e) => {
