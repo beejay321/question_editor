@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Table } from "react-bootstrap";
 import Arr from "../imports/file.json";
 import OneRow from "./OneRow";
-import { getNoOfRows } from "../redux/action";
+import { getNoOfRows, getLongestRowLabel } from "../redux/action";
 import { useDispatch } from "react-redux";
 import plus from "../assets/images/plus-lg-green.svg";
 import dash from "../assets/images/dash-lg.svg";
@@ -22,11 +22,13 @@ const EditionView = () => {
 
   const [oneRow, setOneRow] = useState(Arr); //this is an array containing all rowArrays
   const [questionTitle, setQuestionTitle] = useState(`Title Of Question`);
+  const [longestRowLabel, setLongestRowLabel] = useState([""]);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getNoOfRows(oneRow));
-  }, [oneRow, dispatch]);
+    dispatch(getLongestRowLabel(longestRowLabel));
+  }, [oneRow, dispatch, longestRowLabel]);
 
   const addRow = () => {
     setOneRow([...oneRow, oneRow[oneRow.length - 1]]);
@@ -39,17 +41,24 @@ const EditionView = () => {
 
   const addCol = () => {
     setOneRow([...oneRow.map((row) => [...row, row[row.length - 1]])]);
-  }; 
+  };
 
   const removeCol = () => {
     let result = oneRow.map((row) => (row.length > 1 ? row.slice(0, -1) : row));
     setOneRow(result);
   };
 
+  const createArr = (label) => {
+    console.log(label)
+    let rowLabel = [label.length > longestRowLabel[0].length ? label : longestRowLabel[0]];
+    console.log(rowLabel);
+    setLongestRowLabel(rowLabel);
+  };
+
   return (
     <>
       <div className=" editor ">
-        <Row className="p-3 mb-3 tableHeading " >
+        <Row className="p-3 mb-3 tableHeading ">
           <div className="">
             <ContentEditable
               className="tableHeadingText"
@@ -70,7 +79,7 @@ const EditionView = () => {
                   <tbody className="table">
                     {oneRow.map((row, index) => (
                       <>
-                        <OneRow row={row} index={index} key={index} />
+                        <OneRow row={row} index={index} key={index} createArr={createArr} />
                       </>
                     ))}
                   </tbody>
@@ -85,7 +94,7 @@ const EditionView = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="d-flex pt-2 colBtns ">
                 <div className="rowImageDiv px-2 ">
                   <img className="addImage " onClick={addCol} src={plus} alt="rowImage" />
