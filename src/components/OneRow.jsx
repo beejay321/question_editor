@@ -29,7 +29,7 @@ const OneRow = ({ index, row }) => {
           <div></div>
           {row.map((col, i) => (
             <>
-              <OneColumn col={col} i={i} rowIndex={index} />
+              <OneColumn col={col} i={i} rowIndex={index} key={`${index}${i}`} />
             </>
           ))}
         </tr>
