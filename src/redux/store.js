@@ -4,6 +4,8 @@ import lengthReducer from "./reducers/rowsReducer";
 export const initialState = {
     lengthOfRows: 0,
     lengthOfCols: 0,
+    longestColLabel: [""],
+    longestRowLabel: [""],
   },
   configureStore = () => createStore(lengthReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
