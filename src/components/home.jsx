@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <Container className=" ">
         <Row className="d-flex px-3">
-          <Col sm={12} lg={6} className="d-grid justify-content-start px-3  pt-5  ">
+          <Col sm={12} lg={7} className="d-grid justify-content-start px-3  pt-5  ">
               <h3 className="d-flex justify-content-start  pb-3">Question Edition View</h3>
               <EditionView />
           </Col>
