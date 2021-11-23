@@ -11,3 +11,15 @@ export const getNoOfRows = (row) => {
     payload: row.length - 1,
   };
 };
+export const getLongestColLabel = (label) => {
+  return {
+    type: "GET_LONGEST_COL_LABEL",
+    payload: label,
+  };
+};
+export const getLongestRowLabel = (label) => {
+  return {
+    type: "GET_LONGEST_ROW_LABEL",
+    payload: label,
+  };
+};

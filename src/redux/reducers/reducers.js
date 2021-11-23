@@ -5,12 +5,22 @@ const lengthReducer = (state = { initialState }, action) => {
     case "GET_NO_COLS":
       return {
         ...state,
-        lengthOfCols: action.payload, 
+        lengthOfCols: action.payload,
       };
     case "GET_NO_ROWS":
       return {
         ...state,
-        lengthOfRows: action.payload, 
+        lengthOfRows: action.payload,
+      };
+    case "GET_LONGEST_COL_LABEL":
+      return {
+        ...state,
+        longestColLabel: action.payload,
+      };
+    case "GET_LONGEST_ROW_LABEL":
+      return {
+        ...state,
+        longestRowLabel: action.payload,
       };
 
     default:
