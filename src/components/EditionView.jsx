@@ -49,9 +49,7 @@ const EditionView = () => {
   };
 
   const createArr = (label) => {
-    console.log(label)
     let rowLabel = [label.length > longestRowLabel[0].length ? label : longestRowLabel[0]];
-    console.log(rowLabel);
     setLongestRowLabel(rowLabel);
   };
 
