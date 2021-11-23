@@ -38,15 +38,15 @@ const SummaryView = () => {
 
   return (
     <>
-      <Container className=" ">
-        <Row>
+      {/* <Container className=" summary"> */}
+        <div className=" summary py-4 px-4">
           <p className="summaryText py-1">Number Of Rows : {number.lengthOfRows}</p>
           <p className="summaryText py-1">Number Of Columns : {number.lengthOfCols}</p>
           <p className="summaryText py-1">Number Of images Uploaded : {numOfImages} </p>
           <p className="summaryText py-1">Longest row label :</p>
           <p className="summaryText py-1">Longest column label : </p>
-        </Row>
-      </Container>
+        </div>
+      {/* </Container> */}
     </>
   );
 };
