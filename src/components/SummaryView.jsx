@@ -7,7 +7,7 @@ const SummaryView = () => {
   const [numOfImages, setNumOfImages] = useState(0);
   const [rowLabel, setRowLabel] = useState("");
   const [colLabel, setColLabel] = useState("");
-  const number = useSelector((state) => state);
+  const currentState = useSelector((state) => state);
 
   const ADDRESS = "https://question-editorr.herokuapp.com";
 
@@ -39,13 +39,13 @@ const SummaryView = () => {
   return (
     <>
       {/* <Container className=" summary"> */}
-        <div className=" summary py-4 px-4">
-          <p className="summaryText py-1">Number Of Rows : {number.lengthOfRows}</p>
-          <p className="summaryText py-1">Number Of Columns : {number.lengthOfCols}</p>
-          <p className="summaryText py-1">Number Of images Uploaded : {numOfImages} </p>
-          <p className="summaryText py-1">Longest row label :</p>
-          <p className="summaryText py-1">Longest column label : </p>
-        </div>
+      <div className=" summary py-4 px-4">
+        <p className="summaryText py-1">Number Of Rows : {currentState.lengthOfRows}</p>
+        <p className="summaryText py-1">Number Of Columns : {currentState.lengthOfCols}</p>
+        <p className="summaryText py-1">Number Of images Uploaded : {numOfImages} </p>
+        <p className="summaryText py-1">Longest row label : {currentState.longestRowLabel}</p>
+        <p className="summaryText py-1">Longest column label : {currentState.longestColLabel} </p>
+      </div>
       {/* </Container> */}
     </>
   );
