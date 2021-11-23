@@ -48,11 +48,11 @@ const EditionView = () => {
 
   return (
     <>
-      <Container className=" ">
-        <Row>
-          <div className="p-3 mb-3 tableHeading">
+      <div className=" editor ">
+        <Row className="p-3 mb-3 tableHeading " >
+          <div className="">
             <ContentEditable
-              className="tableHeading"
+              className="tableHeadingText"
               tagName="h5"
               html={questionTitle}
               onChange={(e) => {
@@ -62,9 +62,9 @@ const EditionView = () => {
             />
           </div>
         </Row>
-        <Row>
+        <Row className=" ">
           <Col className="">
-            <div className="d-flex table ">
+            <div className="d-flex table  ">
               <div>
                 <Table>
                   <tbody className="table">
@@ -85,7 +85,8 @@ const EditionView = () => {
                   </div>
                 </div>
               </div>
-              <div className="d-flex pt-2  ">
+              
+              <div className="d-flex pt-2 colBtns ">
                 <div className="rowImageDiv px-2 ">
                   <img className="addImage " onClick={addCol} src={plus} alt="rowImage" />
                 </div>
@@ -96,7 +97,7 @@ const EditionView = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
     </>
   );
 };
