@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const SummaryView = () => {
   const [images, setImages] = useState([]);
   const [numOfImages, setNumOfImages] = useState(0);
-  const [rowLabel, setRowLabel] = useState("");
-  const [colLabel, setColLabel] = useState("");
-  const number = useSelector((state) => state);
+  const currentState = useSelector((state) => state);
 
   const ADDRESS = "https://question-editorr.herokuapp.com";
 
@@ -38,15 +35,13 @@ const SummaryView = () => {
 
   return (
     <>
-      <Container className=" ">
-        <Row>
-          <p className="summaryText py-1">Number Of Rows : {number.lengthOfRows}</p>
-          <p className="summaryText py-1">Number Of Columns : {number.lengthOfCols}</p>
-          <p className="summaryText py-1">Number Of images Uploaded : {numOfImages} </p>
-          <p className="summaryText py-1">Longest row label :</p>
-          <p className="summaryText py-1">Longest column label : </p>
-        </Row>
-      </Container>
+      <div className=" summary mx-3 py-5 px-5">
+        <p className="summaryText py-1">Number Of Rows : {currentState.lengthOfRows}</p>
+        <p className="summaryText py-1">Number Of Columns : {currentState.lengthOfCols}</p>
+        <p className="summaryText py-1">Number Of images Uploaded : {numOfImages} </p>
+        <p className="summaryText py-1">Longest row label : {currentState.longestRowLabel}</p>
+        <p className="summaryText py-1">Longest column label : {currentState.longestColLabel} </p>
+      </div>
     </>
   );
 };
