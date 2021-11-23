@@ -24,7 +24,7 @@ const OneColumn = ({ col, i, rowIndex }) => {
   return (
     <>
       {col.type === "image" ? (
-        <td className="tableCell ">
+        <td key={`${rowIndex}${i}`} className="tableCell ">
           <div className="d-grid justify-content-start gap-2 ">
             <ImageModal imageClass="colImage" imageDivClass="colImageDiv" />
             <ContentEditable
@@ -39,7 +39,7 @@ const OneColumn = ({ col, i, rowIndex }) => {
           </div>
         </td>
       ) : (
-        <td className="tableCell">
+        <td key={`${rowIndex}${i}`} className="tableCell">
           <div className="d-grid justify-content-center pt-2  ">
             <input type={inputValues.type} id={`${rowIndex}${i}`} name={`Row ${rowIndex}`} defaultValue={inputValues.value} onChange={(e) => handleChangeInput(i, e)} />
           </div>
