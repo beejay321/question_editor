@@ -21,32 +21,12 @@ const EditionView = () => {
   const itemsArr = [arrObj, arrObj]; //this is an array containing all array of objects which equivalent to Arr import
 
   const [oneRow, setOneRow] = useState(Arr); //this is an array containing all rowArrays
-  const [rowCount, setRowCount] = useState("");
   const [questionTitle, setQuestionTitle] = useState(`Title Of Question`);
   const dispatch = useDispatch();
 
-  const ADDRESS = "https://question-editorr.herokuapp.com";
-
-  const getQuestion = async () => {
-    try {
-      const response = await fetch(`${ADDRESS}/questions`);
-      console.log(response);
-      if (response.ok) {
-        const data = await response.json();
-        // setOneRow(data[0].rows);
-        console.log("Successful");
-      } else {
-        console.log("Something went wrong");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     dispatch(getNoOfRows(oneRow));
-    getQuestion();
-  }, [oneRow]);
+  }, [oneRow, dispatch]);
 
   const addRow = () => {
     setOneRow([...oneRow, oneRow[oneRow.length - 1]]);
@@ -58,11 +38,11 @@ const EditionView = () => {
   };
 
   const addCol = () => {
-    setOneRow([...oneRow.map((row, i) => [...row, row[row.length - 1]])]);
-  };
+    setOneRow([...oneRow.map((row) => [...row, row[row.length - 1]])]);
+  }; 
 
   const removeCol = () => {
-    let result = [...oneRow.map((row, i) => row.slice(0, -1))];
+    let result = oneRow.map((row) => (row.length > 1 ? row.slice(0, -1) : row));
     setOneRow(result);
   };
 
