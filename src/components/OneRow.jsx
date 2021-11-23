@@ -11,7 +11,7 @@ const OneRow = ({ index, row }) => {
 
   useEffect(() => {
     dispatch(getNoOfColumns(row));
-  }, [row]);
+  }, [row, dispatch]);
 
   // useEffect(() => {
   //   const rowLabelLength = () => {
@@ -36,7 +36,7 @@ const OneRow = ({ index, row }) => {
       ) : (
         <tr key={index} className="tableRow py-3">
           <div className="d-flex justify-content-start gap-2 ">
-            <ImageModal index={index} imageClass="rowImage" imageDivClass ="rowImageDiv" />
+            <ImageModal index={index} imageClass="rowImage" imageDivClass="rowImageDiv" />
             <ContentEditable
               className="rowText"
               tagName="p"
