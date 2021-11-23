@@ -30,7 +30,7 @@ const OneColumn = ({ col, i, rowIndex, key, arrOfColLabels }) => {
   return (
     <>
       {col.type === "image" ? (
-        <td key= {key} className="tableCell ">
+        <td key= {key} className=" tableCell ">
           <div className="d-grid justify-content-start gap-2 ">
               <ImageModal imageClass="colImage" imageDivClass="colImageDiv" />  
               <ContentEditable
@@ -48,8 +48,8 @@ const OneColumn = ({ col, i, rowIndex, key, arrOfColLabels }) => {
         </td>
       ) : (
         <td key={key} className="tableCell">
-          <div className="d-grid justify-content-center pt-2  ">
-            <input type={inputValues.type} id={`${rowIndex}${i}`} name={`Row ${rowIndex}`} defaultValue={inputValues.value} onChange={(e) => handleChangeInput(i, e)} />
+          <div className="d-grid justify-content-start pt-2 px-3">
+            <input  type={inputValues.type} id={`${rowIndex}${i}`} name={`Row ${rowIndex}`} defaultValue={inputValues.value} onChange={(e) => handleChangeInput(i, e)} />
           </div>
           {/* <input type={col.type} id={col.id} name={i} defaultValue={col.value} /> //  if the selected buttons were to have the same name vertically*/}
         </td>
