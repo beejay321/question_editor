@@ -25,12 +25,12 @@ const SummaryView = () => {
   };
 
   useEffect(() => {
+    getImages();
     const imageLength = () => {
       setNumOfImages(images.length);
     };
-    getImages();
     imageLength();
-  }, [imageLength]);
+  }, []);
 
   return (
     <>
