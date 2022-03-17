@@ -31,7 +31,7 @@ const SummaryView = () => {
   useEffect(() => {
     getImages();
     imageLength();
-  }, []);
+  }, [imageLength]);
 
   return (
     <>

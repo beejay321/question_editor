@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Table } from "react-bootstrap";
+import { Row, Col, Table } from "react-bootstrap";
 import Arr from "../imports/file.json";
 import OneRow from "./OneRow";
 import { getNoOfRows, getLongestRowLabel } from "../redux/action";
@@ -26,6 +26,7 @@ const EditionView = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log(itemsArr);
     dispatch(getNoOfRows(oneRow));
     dispatch(getLongestRowLabel(longestRowLabel));
   }, [oneRow, dispatch, longestRowLabel]);

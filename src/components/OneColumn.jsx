@@ -13,7 +13,7 @@ const OneColumn = ({ col, i, rowIndex, key, arrOfColLabels }) => {
 
   useEffect(() => {
     arrOfColLabels(colLabel);
-  }, [colLabel]);
+  }, [colLabel, arrOfColLabels]);
 
   const handleChangeInput = (i, e) => {
     setInputValues({

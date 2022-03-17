@@ -14,7 +14,7 @@ const OneRow = ({ index, row, createArr }) => {
     dispatch(getNoOfColumns(row));
     dispatch(getLongestColLabel(longestColLabel));
     createArr(rowLabel);
-  }, [row, dispatch, rowLabel, longestColLabel]);
+  }, [row, dispatch, rowLabel, createArr, longestColLabel]);
 
   const arrOfColLabels = (label) => {
     console.log("");
