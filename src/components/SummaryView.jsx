@@ -24,11 +24,10 @@ const SummaryView = () => {
     }
   };
 
-  const imageLength = () => {
-    setNumOfImages(images.length);
-  };
-
   useEffect(() => {
+    const imageLength = () => {
+      setNumOfImages(images.length);
+    };
     getImages();
     imageLength();
   }, [imageLength]);

@@ -29,7 +29,7 @@ const EditionView = () => {
     console.log(itemsArr);
     dispatch(getNoOfRows(oneRow));
     dispatch(getLongestRowLabel(longestRowLabel));
-  }, [oneRow, dispatch, longestRowLabel]);
+  }, [oneRow, dispatch,itemsArr, longestRowLabel]);
 
   const addRow = () => {
     setOneRow([...oneRow, oneRow[oneRow.length - 1]]);
