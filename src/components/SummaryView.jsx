@@ -30,7 +30,7 @@ const SummaryView = () => {
       setNumOfImages(images.length);
     };
     imageLength();
-  }, []);
+  }, [images.length]);
 
   return (
     <>

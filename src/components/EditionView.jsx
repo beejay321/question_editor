@@ -26,10 +26,9 @@ const EditionView = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(itemsArr);
     dispatch(getNoOfRows(oneRow));
     dispatch(getLongestRowLabel(longestRowLabel));
-  }, [oneRow, dispatch,itemsArr, longestRowLabel]);
+  }, [oneRow, dispatch, longestRowLabel]);
 
   const addRow = () => {
     setOneRow([...oneRow, oneRow[oneRow.length - 1]]);
@@ -43,15 +42,16 @@ const EditionView = () => {
   const addCol = () => {
     setOneRow([...oneRow.map((row) => [...row, row[row.length - 1]])]);
   };
-
+  
   const removeCol = () => {
     let result = oneRow.map((row) => (row.length > 1 ? row.slice(0, -1) : row));
     setOneRow(result);
   };
-
+  
   const createArr = (label) => {
     let rowLabel = [label.length > longestRowLabel[0].length ? label : longestRowLabel[0]];
     setLongestRowLabel(rowLabel);
+    console.log(itemsArr);
   };
 
   return (
