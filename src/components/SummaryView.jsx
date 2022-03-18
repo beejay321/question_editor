@@ -34,7 +34,7 @@ const SummaryView = () => {
 
   return (
     <>
-      <div className=" summary mx-3 py-5 px-5">
+      <div className=" summary   py-5 px-5">
         <p className="summaryText py-1">Number Of Rows : {currentState.lengthOfRows}</p>
         <p className="summaryText py-1">Number Of Columns : {currentState.lengthOfCols}</p>
         <p className="summaryText py-1">Number Of images Uploaded : {numOfImages} </p>
